@@ -1,8 +1,9 @@
-## Welcome to GitHub Pages
+## Speech Sequence Segmentation
+### DSP EE320 Project Work 2017
 
-You can use the [editor on GitHub](https://github.com/anand374/Automatic-Speech-Sequence-Segmentation/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+This is a course project made by our group for the course EE320: Digital Signal Processing taught by Dr. Prithwijit Guha Sir, at Indian Institute of Technology Guwahati.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+**The AIM** of our project is to segment speech sequences based on speaker transitions. Additionally, it will identify the number of speakers along with the zones where single or multiple speakers are active.
 
 ### Markdown
 
