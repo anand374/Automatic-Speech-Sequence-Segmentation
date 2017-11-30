@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style>
+table, th, td {
+    border: 2px solid black;
+}
+</style>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Speaker Transisition Detection</title>
@@ -234,8 +239,28 @@ to a family of 16 trigonometric transformations</p>
  <img src="img/matrix.jpg">
 
  <p> Correlation Matrix on DCT applied on Radon Projections</p>
- <img src="img/DCTcorrelation.jpg"><img src="img/DCTcorrelation1.jpg">
+ <img src="img/DCTcorrelation.png"><img src="img/DCTcorrelation1.png">
+ <p> The above Images show the correlation coefficient output in a 7X7 output matrix. For interpreting, note that the value of index 0 of first row is 1, since it is the correlation between itself. Similarly the Index 1 of 2nd row has correlation coefficient 1 (log10(1)=0), and so on. The index 1 of 1st row is the correlation between speech segment 1 and segment 2. Note that greater the correlation coefficient greater is the probability that the speaker is same. We can consider a thresh level of log10(0.5) and say that if the coefficient is less than this thresh, then a speaker transition has occured. 
+ <BR> We tested this with our dataset of 7 audio samples. When evaluated, the accuracy was found was found to be less than 50%. 
+<p>
 
+<h3> Comparison with MFCC </h3>
+We also tried using MFCC as features. It's accuracy was found to be around 97%.
+<img src="img/MFCC.png">
+
+<table align=center>
+<caption><b>Accuracy Comparison</b></caption>
+  <tr>
+    <th>MFCC</th>
+    <th>Spectrogram with Radon Transform</th> 
+    <th>Radon Transform with DCT</th>
+  </tr>
+  <tr>
+    <td>97%</td>
+    <td>41%</td> 
+    <td>48%</td>
+  </tr>
+</table>
 
 <!-- Contact Section -->
 <div id="contact-section">
@@ -244,7 +269,7 @@ to a family of 16 trigonometric transformations</p>
       <h2> Conclusion</h2>
       <p> We tried to identify speaker transitions using radon transform and DCT on speech spectogram. The results we got were unsatisfactory although the correlation matrix  of DCT coefficents were more better in distingusihing two speakers than the correlation matrix of only Radon Transform Projections. The accuracy we got in detecting speaker transition was less than 50%. Hence we don't recommend using spectogram for speaker transition or identification tasks. 
     
-      <h4> Feature Extension </h4>
+      <h4> Future Extension </h4>
       <p> 1.The noise robustness can be improved.</p>
       <p> 2. Furthermore, advance speaker diarization should be able to handle presence of overlapped speech on which the occurrence of overlapping speech almost regularly presents in natural conversation.</p>
       <h4>Applications </h4>
